@@ -1,3 +1,5 @@
+from turtle import st
+
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -39,3 +41,7 @@ def delete_user():
 @app.get("/student/{student_id}")
 def get_student(student_id: int):
     return {"student_id":student_id,"message":"Student data fetched successfully"}
+
+@app.get("/student1/{student1_name}")
+def get_student1(student1_name: str):
+    return {"student1_name":student1_name,"message":"fetched student name"}
