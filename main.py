@@ -18,16 +18,16 @@ def user():
 
 #POST request
 
-@app.post("/create_user")
+@app.post("/create-user")
 def create_user():
     return {"message":"user created successfully"}
-@app.post("/update_user")
+@app.post("/update-user")
 def update_user():
     return {"message":"user updated successfully"}
 
 
 #DELETE request
 
-@app.delete("/delete_user")
+@app.delete("/delete-user")
 def delete_user():
     return {"message":"user deleted successfully"}
