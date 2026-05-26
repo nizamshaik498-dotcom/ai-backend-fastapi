@@ -15,3 +15,19 @@ def msg():
 @app.get("/user")
 def user():
     return {"name":"S.Mohammed Nijamuddin","role":"AI backend engineer"}
+
+#POST request
+
+@app.post("/create_user")
+def create_user():
+    return {"message":"user created successfully"}
+@app.post("/update_user")
+def update_user():
+    return {"message":"user updated successfully"}
+
+
+#DELETE request
+
+@app.delete("/delete_user")
+def delete_user():
+    return {"message":"user deleted successfully"}
