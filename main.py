@@ -52,3 +52,15 @@ def get_student1(student1_name: str):
 @app.get("/search")
 def search(name: str,age: int):
     return {"student_name":name,"student_age":age}
+
+#Request body
+
+from pydantic import  BaseModel
+
+class Student(BaseModel):
+    name:str
+    age:int
+    course:str
+@app.post("/student")
+def create_student(student:Student):
+    return{"message":"student created","data":student}
