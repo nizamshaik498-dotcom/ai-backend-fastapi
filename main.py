@@ -34,3 +34,8 @@ def update_user():
 @app.delete("/delete-user")
 def delete_user():
     return {"message":"user deleted successfully"}
+
+
+@app.get("/student/{student_id}")
+def get_student(student_id: int):
+    return {"student_id":student_id,"message":"Student data fetched successfully"}
