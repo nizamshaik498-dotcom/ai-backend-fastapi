@@ -37,6 +37,7 @@ def update_user():
 def delete_user():
     return {"message":"user deleted successfully"}
 
+#path parameters
 
 @app.get("/student/{student_id}")
 def get_student(student_id: int):
@@ -45,3 +46,9 @@ def get_student(student_id: int):
 @app.get("/student1/{student1_name}")
 def get_student1(student1_name: str):
     return {"student1_name":student1_name,"message":"fetched student name"}
+
+#Query parameters
+
+@app.get("/search")
+def search(name: str,age: int):
+    return {"student_name":name,"student_age":age}
