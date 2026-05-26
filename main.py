@@ -21,7 +21,10 @@ def user():
 @app.post("/create-user")
 def create_user():
     return {"message":"user created successfully"}
-@app.post("/update-user")
+
+#PUT request
+
+@app.put("/update-user")
 def update_user():
     return {"message":"user updated successfully"}
 
