@@ -1,5 +1,5 @@
 from turtle import st
-
+from pydantic import BaseModel
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -55,8 +55,6 @@ def search(name: str,age: int):
 
 #Request body
 
-from pydantic import  BaseModel
-
 class Student(BaseModel):
     name:str
     age:int
@@ -64,3 +62,13 @@ class Student(BaseModel):
 @app.post("/student")
 def create_student(student:Student):
     return{"message":"student created","data":student}
+
+#Request body
+
+class Employee(BaseModel):
+    name:str
+    emp_id:int
+    dept:str
+@app.post("/employee")
+def create_employee(employee:Employee):
+    return {"message":"Employee Data","data":employee}
