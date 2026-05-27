@@ -82,3 +82,6 @@ class Employee(BaseModel):
 def create_employee(employee:Employee):
     employee.append(Employee)
     return {"message":"Employee added data","data":employee}
+@app.get("/employees")
+def get_employees():
+    return {"message":"Employee List","data":employees}
