@@ -54,7 +54,6 @@ def search(name: str,age: int):
     return {"student_name":name,"student_age":age}
 
 #Request body
-
 class Student(BaseModel):
     name:str
     age:int
