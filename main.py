@@ -72,3 +72,13 @@ class Employee(BaseModel):
 @app.post("/employee")
 def create_employee(employee:Employee):
     return {"message":"Employee Data","data":employee}
+
+employees=[]
+class Employee(BaseModel):
+    name:str
+    e_id:int
+    dept:str
+@app.post("/employee")
+def create_employee(employee:Employee):
+    employee.append(Employee)
+    return {"message":"Employee added data","data":employee}
