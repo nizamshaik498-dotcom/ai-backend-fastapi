@@ -93,7 +93,7 @@ def update_employee(emp_id: int,update_employee:Employee):
         if employee.emp_id==emp_id:
             employees[index]=updated_employee
             return {"message":"Employee updated","data":updated_employee}
-    return {"erroe":"Employee not found"}
+    return {"error":"Employee not found"}
 
 @app.delete("/employee/{mep_id}")
 def delete_employee(emp_id: int):
