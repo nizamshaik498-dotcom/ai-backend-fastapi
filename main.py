@@ -80,7 +80,7 @@ class Employee(BaseModel):
     dept:str
 @app.post("/employee")
 def create_employee(employee:Employee):
-    employee.append(Employee)
+    employees.append(employee)
     return {"message":"Employee added data","data":employee}
 
 @app.get("/employees")
