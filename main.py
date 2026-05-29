@@ -82,9 +82,11 @@ class Employee(BaseModel):
 def create_employee(employee:Employee):
     employee.append(Employee)
     return {"message":"Employee added data","data":employee}
+
 @app.get("/employees")
 def get_employees():
     return employees
+
 @app.put("/employees/{emp_id}")
 def update_employee(emp_id: int,update_employee:Employee):
     for index, employee in enumerate (employees):
@@ -92,3 +94,11 @@ def update_employee(emp_id: int,update_employee:Employee):
             employees[index]=updated_employee
             return {"message":"Employee updated","data":updated_employee}
     return {"erroe":"Employee not found"}
+
+@app.delete("/employee/{mep_id}")
+def delete_employee(emp_id: int):
+    for index,employee in enumerate(employees):
+        if employee.emp_id==emp_id:
+            deleted_employee=employees.pop(index)
+            return{"message":"Employee deleted","data":deleted_employee}
+    return {"error":"Employee not found"}
