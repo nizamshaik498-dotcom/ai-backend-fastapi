@@ -84,4 +84,5 @@ def create_employee(employee:Employee):
     return {"message":"Employee added data","data":employee}
 @app.get("/employees")
 def get_employees():
-    return {"message":"Employee List","data":employees}
+    return employees
+
