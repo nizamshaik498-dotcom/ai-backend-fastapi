@@ -85,4 +85,10 @@ def create_employee(employee:Employee):
 @app.get("/employees")
 def get_employees():
     return employees
-
+@app.put("/employees/{emp_id}")
+def update_employee(emp_id: int,update_employee:Employee):
+    for index, employee in enumerate (employees):
+        if employee.emp_id==emp_id:
+            employees[index]=updated_employee
+            return {"message":"Employee updated","data":updated_employee}
+    return {"erroe":"Employee not found"}
