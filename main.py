@@ -88,17 +88,17 @@ def get_employees():
     return employees
 
 @app.put("/employees/{emp_id}")
-def update_employee(emp_id: int,update_employee:Employee):
+def update_employee(e_id: int,update_employee:Employee):
     for index, employee in enumerate (employees):
-        if employee.emp_id==emp_id:
-            employees[index]=updated_employee
-            return {"message":"Employee updated","data":updated_employee}
+        if employee.e_id==e_id:
+            employees[index]=update_employee
+            return {"message":"Employee updated","data":update_employee}
     return {"error":"Employee not found"}
 
-@app.delete("/employee/{mep_id}")
-def delete_employee(emp_id: int):
+@app.delete("/employee/{emp_id}")
+def delete_employee(e_id: int):
     for index,employee in enumerate(employees):
-        if employee.emp_id==emp_id:
+        if employee.e_id==e_id:
             deleted_employee=employees.pop(index)
             return{"message":"Employee deleted","data":deleted_employee}
     return {"error":"Employee not found"}
