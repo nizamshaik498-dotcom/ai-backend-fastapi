@@ -87,7 +87,7 @@ def create_employee(employee:Employee):
 def get_employees():
     return employees
 
-@app.put("/employees/{emp_id}")
+@app.put("/employees/{e_id}")
 def update_employee(e_id: int,update_employee:Employee):
     for index, employee in enumerate (employees):
         if employee.e_id==e_id:
@@ -95,7 +95,7 @@ def update_employee(e_id: int,update_employee:Employee):
             return {"message":"Employee updated","data":update_employee}
     return {"error":"Employee not found"}
 
-@app.delete("/employee/{emp_id}")
+@app.delete("/employee/{e_id}")
 def delete_employee(e_id: int):
     for index,employee in enumerate(employees):
         if employee.e_id==e_id:
