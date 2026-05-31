@@ -1,8 +1,6 @@
 from turtle import st
 from pydantic import BaseModel
-from fastapi import FastAPI
-from fastapi import HTTPException
-
+from fastapi import FastAPI, HTTPException
 app = FastAPI()
 
 @app.get("/")
