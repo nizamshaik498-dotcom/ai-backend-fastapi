@@ -1,6 +1,7 @@
 from turtle import st
 from pydantic import BaseModel
 from fastapi import FastAPI
+from fastapi import HTTPException
 
 app = FastAPI()
 
@@ -93,7 +94,7 @@ def update_employee(e_id: int,update_employee:Employee):
         if employee.e_id==e_id:
             employees[index]=update_employee
             return {"message":"Employee updated","data":update_employee}
-    return {"error":"Employee not found"}
+    raise HTTPException(status_code=404,detail="Employee not found")
 
 @app.delete("/employee/{e_id}")
 def delete_employee(e_id: int):
@@ -101,4 +102,4 @@ def delete_employee(e_id: int):
         if employee.e_id==e_id:
             deleted_employee=employees.pop(index)
             return{"message":"Employee deleted","data":deleted_employee}
-    return {"error":"Employee not found"}
+    raise HTTPException(status_code=404,detail="Employee not found")
