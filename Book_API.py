@@ -12,3 +12,7 @@ class Book(BaseModel):
 
 
 #POST
+@app.post("/books")
+def create_book(book:Book):
+    books.append(book)
+    return{"message":"Book Added","data":book}
