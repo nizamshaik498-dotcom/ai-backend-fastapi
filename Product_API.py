@@ -1,4 +1,4 @@
-from fastapi import FastAPI,HTTPSException
+from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
 
 app=FastAPI()
