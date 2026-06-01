@@ -16,3 +16,9 @@ class Product(BaseModel):
 def create_product(prdct:Product):
     product.append(prdct)
     return{"message":"product added","data":prdct}
+
+#Get
+
+@app.get("/product")
+def get_product():
+    return product
