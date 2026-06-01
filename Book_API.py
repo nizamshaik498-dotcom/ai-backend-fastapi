@@ -6,9 +6,9 @@ app=FastAPI()
 books=[]
 
 class Book(BaseModel):
-    id:int
     title:str
     author:str
+    price:int
 
 
 #POST
