@@ -16,3 +16,8 @@ class Book(BaseModel):
 def create_book(book:Book):
     books.append(book)
     return{"message":"Book Added","data":book}
+
+#GET
+@app.get("/books")
+def get_books():
+    return books
