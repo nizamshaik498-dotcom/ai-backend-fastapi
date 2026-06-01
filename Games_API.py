@@ -5,7 +5,7 @@ app=FastAPI()
 
 games=[]
 
-class Games(BaseModel):
+class Game(BaseModel):
     name:str
     genre:str
     rating:int
@@ -13,6 +13,11 @@ class Games(BaseModel):
 #POST
 
 @app.post("/games")
-def create_games(game:Games):
+def create_game(game:Game):
     games.append(game)
     return{"message":"Game Added","data":game}
+
+#GET
+@app.get("/games")
+def get_games():
+    return games
