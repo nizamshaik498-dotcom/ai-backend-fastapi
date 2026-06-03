@@ -29,3 +29,11 @@ def update_game(game_id:int,game:Game):
         raise HTTPException(status_code=404,details="Game not found")
     games[game_id]=game
     return {"message":"Game updated"}
+
+#DELETE
+@app.delete("/games/{game_id}")
+def delete_game(game_id:int):
+    if game_id<0 or game_id>=len(games):
+        raise HTTPException(status_code=404,details="Game not found")
+    deleted_game=games.pop(game_id)
+    return {"message":"Game deleted","data":deleted_game}
