@@ -29,3 +29,10 @@ def update_product(product_id:int,prdct:Product):
     product[product_id]=prdct
     return {"message":"Product updated"}
 
+#DELETE
+@app.delete("/product/{product_id}")
+def delete_product(product_id:int):
+    if product_id<0 or product_id>=len(product):
+        raise HTTPException(status_code=404,details="Product not found")
+    deleted_product=product.pop(product_id)
+    return {"message":"Product deleted","data":deleted_product}
