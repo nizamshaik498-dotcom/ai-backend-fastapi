@@ -11,7 +11,6 @@ class Game(BaseModel):
     rating:int
 
 #POST
-
 @app.post("/games")
 def create_game(game:Game):
     games.append(game)
