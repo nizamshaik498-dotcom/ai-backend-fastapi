@@ -31,7 +31,7 @@ def update_stock(stock_id:int,stocks:Stock):
 
 #DELETE
 @app.delete("/stock/{stock_id}")
-def delete_stock(stock_id;int):
+def delete_stock(stock_id:int):
     if stock_id<0 or stock_id>=len(stock):
         raise HTTPException(status_code=404,details="Stock not found")
     deleted_stock=stock.pop(stock_id)
