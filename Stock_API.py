@@ -16,4 +16,9 @@ def create_stock(stocks:Stock):
     stock.append(stocks)
     return {"message":"Stock Added","data":stocks}
 
+#GET
+@app.get("/stock")
+def get_stock():
+    return stock
+
 
