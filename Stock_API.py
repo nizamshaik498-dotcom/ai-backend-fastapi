@@ -10,5 +10,10 @@ class Stock(BaseModel):
     price:int
     type:str
 
+#POST
+@app.post("/stock")
+def create_stock(stocks:Stock):
+    stock.append(stocks)
+    return {"message":"Stock Added","data":stocks}
 
 
