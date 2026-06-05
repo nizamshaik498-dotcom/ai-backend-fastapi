@@ -30,4 +30,8 @@ def update_movie(movie_id:int,movies:Movie):
 
 #DELETE
 @app.delete("/movie/{movie_id}")
-def delete_movie
+def delete_movie(movie_id:int):
+    if movie_id<0 or movie_id>=len(movie):
+        raise HTTPException(status_code=404,details="Movie not found")
+    deleted_movie=movie.pop(movie_id)
+    return {"message":"Movie deleted","data":deleted_movie}
