@@ -22,8 +22,12 @@ def get_movie():
 
 #PUT
 @app.put("/movie/{movie_id}")
-def update_movie(movie_id:int):
+def update_movie(movie_id:int,movies:Movie):
     if movie_id<0 or movie_id>=len(movie):
         raise HTTPException(status_code=404,details="Movie not found")
     movie[movie_id]= movies
     return {"message":"Movie not found","data":movies}
+
+#DELETE
+@app.delete("/movie/{movie_id}")
+def delete_movie
