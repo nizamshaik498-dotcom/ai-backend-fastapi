@@ -19,3 +19,11 @@ def create_movie(movies:Movie):
 @app.get("/movie")
 def get_movie():
     return movie
+
+#PUT
+@app.put("/movie/{movie_id}")
+def update_movie(movie_id:int):
+    if movie_id<0 or movie_id>=len(movie):
+        raise HTTPException(status_code=404,details="Movie not found")
+    movie[movie_id]= movies
+    return {"message":"Movie not found","data":movies}
