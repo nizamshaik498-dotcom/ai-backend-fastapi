@@ -10,6 +10,6 @@ conn=psycopg2.connect(
 
 cur=conn.cursor()
 
-cur.execute("INSERT INTO books(id,title,author,price)VALUES(1,'Fastapi_Basics','Alex',500)")
+cur.execute("INSERT INTO books(id,title,author,price)VALUES(3,'Fastapi_Basics','Alex',500)")
 conn.commit()
-print("Boook inserted successfully")
+print("Book inserted successfully")
