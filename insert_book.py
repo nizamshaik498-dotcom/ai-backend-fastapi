@@ -1,6 +1,4 @@
-import sys
 import psycopg2
-print(sys.excecutable)
 
 conn=psycopg2.connect(
     host="localhost",
