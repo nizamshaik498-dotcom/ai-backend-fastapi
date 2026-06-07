@@ -27,3 +27,11 @@ def update_car(car_id:int,cars:Car):
         raise HTTPException(status_code=404,details="Car not found")
     car[car_id]=cars
     return {"message":"Car updated"}
+
+#DELETE
+@app.delete("/car/{car_id}")
+def delete_car(car_id:int):
+    if car_id<0 or car_id>=len(car):
+        raise HTTPException(status_code=404,details="Car not found")
+    deleted_car=car.pop(car_id)
+    return {"message":"Car removed","data":deleted_car}
