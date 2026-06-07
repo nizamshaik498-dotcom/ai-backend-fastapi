@@ -13,6 +13,7 @@ class Car(BaseModel):
 #POST
 @app.post("/car")
 def create_car(cars:Car):
+    car.append(cars)
     return {"message":"Car Added","data":cars}
 
 #GET
