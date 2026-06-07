@@ -12,5 +12,10 @@ class Car(BaseModel):
 
 #POST
 @app.post("/car")
-def create_car(cars:Car)
+def create_car(cars:Car):
     return {"message":"Car Added","data":cars}
+
+#GET
+app.get("/car")
+def get_car():
+    return car
